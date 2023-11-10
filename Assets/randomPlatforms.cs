@@ -6,7 +6,7 @@ public class randomPlatforms : MonoBehaviour
 {
     public GameObject Platform;
     public GameObject Spikes;
-    float minX = -8, maxX = 2118f, minY = -3, maxY = 4, distanceBetweenPlatforms = 2f, minWidth = 0.1f, maxWidth = 2f, minHeight = 0.1f, maxHeight = 2f;
+    float minX = -8, maxX = 2118f, minY = -3, maxY = 4, distanceBetweenPlatforms = 5f, minWidth = 0.1f, maxWidth = 1f, minHeight = 0.1f, maxHeight = 1f;
     private void Start()
     {
         spawnPlatforms();

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -33,7 +34,14 @@ public class Movement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation,
                 Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, -90f)), Time.deltaTime * 1f);
         }
-        
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
     }
 
@@ -53,6 +61,13 @@ public class Movement : MonoBehaviour
         if (GetComponent<Rigidbody2D>().velocityY == 0)
         {
             isGrounded = true;
+        }
+    }
+    void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        if (collision.collider.CompareTag("spike"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
