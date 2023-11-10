@@ -9,7 +9,6 @@ public class Movement : MonoBehaviour
     private float jumpThrust;
     [SerializeField] private GameObject followCam = null;
     private bool isGrounded;
-    private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,6 @@ public class Movement : MonoBehaviour
         speed = 200.0f;
         jumpThrust = 6.0f;
         isGrounded = false;
-        rotationSpeed = 10f;
 
     }
 
@@ -30,6 +28,12 @@ public class Movement : MonoBehaviour
             isGrounded = false;
             Debug.Log("jump");
         }
+        if (!isGrounded)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation,
+                Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, -90f)), Time.deltaTime * 1f);
+        }
+        
 
     }
 
@@ -41,7 +45,11 @@ public class Movement : MonoBehaviour
 
     void OnCollisionStay2D()
     {
-        //GetComponent<Rigidbody2D>().SetRotation(0.0f);
+        if (!isGrounded)
+        {
+            GetComponent<Rigidbody2D>().SetRotation(0f);
+        }
+        
         if (GetComponent<Rigidbody2D>().velocityY == 0)
         {
             isGrounded = true;
