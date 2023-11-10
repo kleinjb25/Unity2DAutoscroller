@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         speed = 200.0f;
-        jumpThrust = 6.0f;
+        jumpThrust = 7.5f;
         isGrounded = false;
 
     }

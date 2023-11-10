@@ -333,8 +333,8 @@ Transform:
   m_GameObject: {fileID: 458900056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0.02, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -369,7 +369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 10659239}
+  background: {fileID: 458900056}
   distanceBetweenPlatforms: 2
+  distanceBetweenBG: 10
   numberOfPlatforms: 100
 --- !u!4 &476621044
 Transform:
@@ -488,6 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200471198}
   - component: {fileID: 1200471197}
+  - component: {fileID: 1200471199}
   m_Layer: 0
   m_Name: blackspike_0
   m_TagString: spike
@@ -564,6 +567,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1200471199
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200471196}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.18, y: 2.42}
+    newSize: {x: 2.18, y: 2.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.18, y: 2.42}
+  m_EdgeRadius: 0
 --- !u!1 &1215307490
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +919,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.27, y: 0.73}
+  m_Size: {x: 9.7, y: 1.4}
   m_EdgeRadius: 0
 --- !u!1001 &1609090128
 PrefabInstance:
@@ -1008,6 +1057,14 @@ PrefabInstance:
     - target: {fileID: 65477914053230730, guid: 1b7dc256c411a5743a888cd1e33d88c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 780290547410494814, guid: 1b7dc256c411a5743a888cd1e33d88c8, type: 3}
+      propertyPath: m_Size.x
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 780290547410494814, guid: 1b7dc256c411a5743a888cd1e33d88c8, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4351425696655626542, guid: 1b7dc256c411a5743a888cd1e33d88c8, type: 3}
