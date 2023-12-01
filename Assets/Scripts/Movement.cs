@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1;
         }
         if (Input.GetKey(KeyCode.Escape))
         {
